@@ -25,13 +25,6 @@ export class App extends Component {
 
   async componentDidUpdate(prevProps, prevState) {
     const { searchText, page } = this.state;
-    if (prevState.searchText !== searchText) {
-      this.setState(prevState => ({
-        images: [],
-        page: 1,
-        totalPages: 0,
-      }));
-    }
 
     if (prevState.searchText !== searchText || prevState.page !== page) {
       try {
@@ -56,7 +49,12 @@ export class App extends Component {
 
   /* Задати пошуковий запит */
   handleSearchText = searchText => {
-    this.setState({ searchText });
+    this.setState({
+      searchText,
+      images: [],
+      page: 1,
+      totalPages: 0,
+    });
   };
 
   /* Завантажити більше зображень */
