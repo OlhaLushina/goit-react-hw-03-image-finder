@@ -1,6 +1,6 @@
 import axios from 'axios';
 const API_KEY = '34577809-7101597b9962251251dc5571b';
-const PER_PAGE = 100; // скільки виводити на сторінку зображень
+const PER_PAGE = 12; // скільки виводити на сторінку зображень
 
 export const getImages = async (searchText, page) => {
   const response = await axios.get(
